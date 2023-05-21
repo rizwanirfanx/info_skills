@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const User = require('./Models/User');
 const express = require('express')
 const userRoutes = require('./routes/user_routes')
-
 main().catch(err => console.log(err));
 
 async function main() {
@@ -13,7 +12,7 @@ async function main() {
 	app.use(express.urlencoded({extended: true}));
 	app.use(userRoutes)
 
-	app.listen('3000', () => {
+	app.listen('3001', () => {
 		console.log('NodeJS running');
 	})
 	app.get('/', (req, res) => {

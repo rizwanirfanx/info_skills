@@ -27,6 +27,11 @@ const UserSchema = new Schema({
 		min: 18,
 		max: 100
 	},
+	password: {
+		type: String,
+		min: 8,
+		max: 50,
+	},
 	role: {
 		type: String,
 		enum: ['user', 'admin'],
