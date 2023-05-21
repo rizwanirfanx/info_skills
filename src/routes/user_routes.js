@@ -7,13 +7,13 @@ const hashPassword = require('./../helpers/hash_password')
 const authMiddleware = require('./../middlewares/auth_middleware')
 
 
-router.post('/login', authMiddleware,  async (req, res) => {
+router.post('/login',   async (req, res) => {
 	const {username, password} = req.body;
 	const existingUser = await User.findOne({username});
 	try {
 		if (existingUser) {
 
-			const isPasswordMatch = await bcrypt.compare(password, existingUser.password)
+			const isPasswordMatch = bcrypt.compare(password, existingUser.password)
 			if (isPasswordMatch) {
 				const token = jwt.sign({userId: existingUser._id}, 'some-private-key', {expiresIn: '1h'})
 				return res.json({token: token})
