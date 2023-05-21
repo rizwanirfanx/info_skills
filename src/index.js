@@ -3,6 +3,7 @@ const User = require('./Models/User');
 const express = require('express')
 const userRoutes = require('./routes/user_routes')
 const adminRoutes = require('./routes/admin_routes')
+const publicRoutes = require('./routes/public_routes')
 main().catch(err => console.log(err));
 
 async function main() {
@@ -13,8 +14,9 @@ async function main() {
 	app.use(express.urlencoded({extended: true}));
 	app.use(userRoutes)
 	app.use(adminRoutes)
+	app.use(publicRoutes)
 
-	app.listen('4000', () => {
+	app.listen('3005', () => {
 		console.log('NodeJS running');
 	})
 	app.get('/', (req, res) => {

@@ -13,7 +13,6 @@ const CourseSchema = new Schema({
 	},
 	status: {
 		type: String,
-		enum: ['Free', 'Paid'],
 		required: true
 	}
 });

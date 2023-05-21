@@ -7,7 +7,7 @@ const hashPassword = require('./../helpers/hash_password')
 const authMiddleware = require('./../middlewares/auth_middleware')
 
 
-router.post('/login',   async (req, res) => {
+router.post('/login', async (req, res) => {
 	const {username, password} = req.body;
 	const existingUser = await User.findOne({username});
 	try {
