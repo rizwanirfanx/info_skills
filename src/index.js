@@ -16,7 +16,7 @@ async function main() {
 	app.use(adminRoutes)
 	app.use(publicRoutes)
 
-	app.listen('3005', () => {
+	app.listen('4000', () => {
 		console.log('NodeJS running');
 	})
 	app.get('/', (req, res) => {

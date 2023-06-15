@@ -9,4 +9,9 @@ role
 
 
 
+MERN Stack
+NodeJS, ReactJS, MongoDB, ExpressJS, HTML, CSS
+
+LAMPP Stackk
+PHP, HTML , CSS, SQL, JS
 

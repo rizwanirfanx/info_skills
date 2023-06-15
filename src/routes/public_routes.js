@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Course = require('./../Models/Course');
+const Skill = require('./../Models/Skill');
 
 
 
@@ -23,5 +24,16 @@ router.get('/course/:id', async (req, res) => {
 		return res.status(500).json({error: error})
 	}
 })
+
+router.get('/skills', async (req, res) => {
+	try {
+		const result = await Skill.find();
+		res.status(200).json({result: result})
+	}
+	catch (error) {
+		res.status(500).json({error: error})
+	}
+})
+
 
 module.exports = router

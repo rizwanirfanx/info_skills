@@ -1,13 +1,23 @@
 const mongoose = require('mongoose')
 
-const courseSchema = mongoose.Schema({
+const skillSchema = mongoose.Schema({
 	name: String,
 	description: String,
+	createdAt: {
+		type: Date,
+		default: Date.now
+	},
+	courses: [
+		{
+			type: mongoose.Types.ObjectId,
+			ref : "courses"
+		}
+	]
 
 });
 
-const courseModel = mongoose.model('Course', courseSchema);
+const skillModel = mongoose.model('Skill', skillSchema);
 
 
-module.exports = courseModel;
+module.exports = skillModel;
 
