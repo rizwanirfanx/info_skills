@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 
 const skillSchema = mongoose.Schema({
 	name: String,
+	slug: {
+		type: String,
+		required: true,
+	},
 	description: String,
 	createdAt: {
 		type: Date,
@@ -10,7 +14,7 @@ const skillSchema = mongoose.Schema({
 	courses: [
 		{
 			type: mongoose.Types.ObjectId,
-			ref : "courses"
+			ref : "Course"
 		}
 	]
 

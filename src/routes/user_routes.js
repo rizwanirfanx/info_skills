@@ -12,10 +12,9 @@ router.post('/login', async (req, res) => {
 	const existingUser = await User.findOne({username});
 	try {
 		if (existingUser) {
-
 			const isPasswordMatch = bcrypt.compare(password, existingUser.password)
 			if (isPasswordMatch) {
-				const token = jwt.sign({userId: existingUser._id}, 'some-private-key', {expiresIn: '1h'})
+				const token = jwt.sign({userId: existingUser._id}, 'rizooooooo', {expiresIn: '1h'})
 				return res.json({token: token})
 			}
 			else {
@@ -45,7 +44,6 @@ router.post('/register', async (req, res) => {
 		}
 	}
 
-	// Hash the password
 	try {
 
 		const hashedPassword = await hashPassword(password)

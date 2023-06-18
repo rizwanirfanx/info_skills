@@ -35,5 +35,17 @@ router.get('/skills', async (req, res) => {
 	}
 })
 
+router.get('/skill/:slug', async (req, res) => {
+	const {slug} = req.params
+	const result = await Skill.find({slug: slug}).populate('courses').exec()
+	res.status(200).json({result: result})
+})
+
+router.get('/courses/:courseId', async (req, res) => {
+	const {courseId} = req.params
+	const result = await Course.find(courseId)
+		.populate('skills').exec()
+	res.status(200).json({result: result})
+})
 
 module.exports = router

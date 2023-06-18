@@ -15,3 +15,9 @@ NodeJS, ReactJS, MongoDB, ExpressJS, HTML, CSS
 LAMPP Stackk
 PHP, HTML , CSS, SQL, JS
 
+Use Cases
+
+When the User clicks on Skill, he should be able to see all the courses related to that Skill
+
+
+

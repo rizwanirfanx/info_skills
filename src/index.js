@@ -3,6 +3,7 @@ const User = require('./Models/User');
 const express = require('express')
 const userRoutes = require('./routes/user_routes')
 const adminRoutes = require('./routes/admin_routes')
+const cors = require('cors')
 const publicRoutes = require('./routes/public_routes')
 main().catch(err => console.log(err));
 
@@ -11,12 +12,13 @@ async function main() {
 	const app = express()
 	await mongoose.connect(dbUrl);
 	app.use(express.json());
+	app.use(cors())
 	app.use(express.urlencoded({extended: true}));
 	app.use(userRoutes)
 	app.use(adminRoutes)
 	app.use(publicRoutes)
 
-	app.listen('4000', () => {
+	app.listen('4003', () => {
 		console.log('NodeJS running');
 	})
 	app.get('/', (req, res) => {

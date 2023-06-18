@@ -7,6 +7,10 @@ const CourseSchema = new Schema({
 		type: String,
 		required: true
 	},
+	slug: {
+		type: String,
+		required: true,
+	},
 	link: {
 		type: String,
 		required: true
@@ -30,7 +34,7 @@ const CourseSchema = new Schema({
 	skills: [
 		{
 			type: mongoose.Types.ObjectId,
-			ref: "skills"
+			ref: "Skill"
 		}
 	]
 });
